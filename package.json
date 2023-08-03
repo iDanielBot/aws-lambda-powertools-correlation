@@ -1,0 +1,71 @@
+{
+  "name": "@aws-lambda-powertools-correlation",
+  "version": "0.0.1",
+  "description": "Correlation Ids to be used with powertools-lambda",
+  "scripts": {
+    "test": "npm run test:unit",
+    "test:unit": "jest --group=unit --detectOpenHandles --coverage --verbose",
+    "test:e2e:nodejs14x": "RUNTIME=nodejs14x jest --group=e2e",
+    "test:e2e:nodejs16x": "RUNTIME=nodejs16x jest --group=e2e",
+    "test:e2e:nodejs18x": "RUNTIME=nodejs18x jest --group=e2e",
+    "test:e2e": "jest --group=e2e",
+    "watch": "jest --watch --group=unit",
+    "build": "tsc",
+    "lint": "eslint --ext .ts,.js --no-error-on-unmatched-pattern .",
+    "lint-fix": "eslint --fix --ext .ts,.js --no-error-on-unmatched-pattern .",
+    "prebuild": "rimraf ./lib",
+    "prepack": "node ../../.github/scripts/release_patch_package_json.js ."
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "powertools",
+    "correlation-ids",
+    "correlation",
+    "serverless",
+    "nodejs"
+  ],
+  "author": {
+    "name": "Daniel Bot",
+    "url": "https://github.com/iDanielBot"
+  },
+  "license": "GNU",
+  "dependencies": {
+    "@aws-lambda-powertools/logger": "^1.12.1",
+    "@aws-sdk/client-dynamodb": "^3.382.0",
+    "@aws-sdk/util-dynamodb": "^3.382.0"
+  },
+  "devDependencies": {
+    "@middy/core": "^3.6.2",
+    "@types/aws-lambda": "^8.10.90",
+    "@types/jest": "^29.2.4",
+    "@types/node": "^18.16.18",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "jest": "^29.3.1",
+    "jest-runner-groups": "^2.2.0",
+    "lerna": "^6.6.2",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typedoc": "^0.24.7",
+    "typedoc-plugin-missing-exports": "^2.0.0",
+    "typescript": "^4.9.4",
+    "uuid": "^9.0.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=14"
+  }
+}
