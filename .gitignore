@@ -17,3 +17,5 @@ npm_debug.log*
 yalc.lock
 
 
+# npm
+.npmrc

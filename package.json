@@ -13,8 +13,7 @@
     "build": "tsc",
     "lint": "eslint --ext .ts,.js --no-error-on-unmatched-pattern .",
     "lint-fix": "eslint --fix --ext .ts,.js --no-error-on-unmatched-pattern .",
-    "prebuild": "rimraf ./lib",
-    "prepack": "node ../../.github/scripts/release_patch_package_json.js ."
+    "prebuild": "rimraf ./lib"
   },
   "keywords": [
     "aws",
