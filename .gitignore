@@ -4,9 +4,10 @@ lib
 # include types
 !src/types/*.d.ts
 
-# include jest config
+# jest
 !jest.config.js
 !.eslintrc.js
+coverage
 
 # npm
 node_modules
@@ -14,4 +15,5 @@ npm_debug.log*
 
 # yalc
 yalc.lock
+
 
