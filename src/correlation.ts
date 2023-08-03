@@ -15,8 +15,7 @@ const asyncLocalStorage = new AsyncLocalStorage();
 
 const CORRELATION_KEY = '__X_POWERTOOLS_CORRELATION_IDS__';
 
-export const enableCorrelationIds = (props?: CorrelationProps) => {
-  return {
+export const enableCorrelationIds = (props?: CorrelationProps) => {  return {
     before: (handler: middy.Request) => {
       if (!props || props.awsDefaults === true) {
         const event = handler.event as SupportedEventTypes;
