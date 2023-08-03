@@ -29,6 +29,8 @@
     "url": "https://github.com/iDanielBot"
   },
   "license": "GNU",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "dependencies": {
     "@aws-lambda-powertools/logger": "^1.12.1",
     "@aws-sdk/client-dynamodb": "^3.382.0",
