@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-powertools-correlation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Correlation Ids to be used with powertools-lambda",
   "scripts": {
     "test": "npm run test:unit",
