@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-powertools-correlation",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Correlation Ids to be used with powertools-lambda",
   "scripts": {
     "test": "npm run test:unit",
@@ -52,16 +52,13 @@
     "husky": "^8.0.2",
     "jest": "^29.3.1",
     "jest-runner-groups": "^2.2.0",
-    "lerna": "^6.6.2",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.8",
     "rimraf": "^5.0.1",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "typedoc": "^0.24.7",
-    "typedoc-plugin-missing-exports": "^2.0.0",
-    "typescript": "^4.9.4",
-    "uuid": "^9.0.0"
+    "typescript": "^4.9.4"
   },
   "files": [
     "lib"

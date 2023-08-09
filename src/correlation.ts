@@ -11,7 +11,11 @@ export type CorrelationProps = {
   awsDefaults?: boolean;
 };
 
-const asyncLocalStorage = new AsyncLocalStorage();
+type CorrelationContext = {
+  [CORRELATION_KEY]: CorrelationIds;
+}
+
+const asyncLocalStorage = new AsyncLocalStorage<CorrelationContext>();
 
 const CORRELATION_KEY = '__X_POWERTOOLS_CORRELATION_IDS__';
 
@@ -30,7 +34,7 @@ export const enableCorrelationIds = (props?: CorrelationProps) => {  return {
       } else {
         // no need to track default correlation ids -> initialize asyncLocalStorage with empty object
         asyncLocalStorage.enterWith({
-          CORRELATION_KEY: {
+          [CORRELATION_KEY]: {
             'call-chain-length': '1',
           },
         });
@@ -43,8 +47,8 @@ export const injectCorrelationIds = (logger: PowertoolsLogger) => {
   logger.addPersistentLogAttributes({ ...useCorrelationIds() });
 };
 
-export const useCorrelationIds = (): CorrelationIds => {
-  const store = asyncLocalStorage.getStore() as { [CORRELATION_KEY]: CorrelationIds };
+export const useCorrelationIds = () => {
+  const store = asyncLocalStorage.getStore();
   if (!store) {
     console.warn('No asyncLocalStorage store found');
 
