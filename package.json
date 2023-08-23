@@ -28,7 +28,7 @@
     "name": "Daniel Bot",
     "url": "https://github.com/iDanielBot"
   },
-  "license": "GNU",
+  "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "dependencies": {
