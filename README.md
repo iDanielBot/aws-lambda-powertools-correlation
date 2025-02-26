@@ -1,7 +1,6 @@
 # aws-lambda-powertools-correlation
 Correlation Ids for aws-lambda-powertools
 
-
 <h3>Features</h3>
 
 1. Middleware to enable injecting correlation ids from the request into the <i>AsyncLocalStorage</i>
@@ -31,7 +30,7 @@ export const handler = (_handler: Lambda.APIGatewayProxyHandlerV2) => {
 };
 ```
 
-3.  Utility to get correlation ids from the AsyncLocalStorage: <i>getCorrelationIds()</i>
+3.  Utility to get correlation ids from the internal store: <i>getCorrelationIds()</i>
 ```typescript
 import { useCorrelationIds } from '@aws-lambda-powertools-correlation';
 
