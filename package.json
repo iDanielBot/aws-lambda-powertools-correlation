@@ -37,7 +37,7 @@
     "@aws-sdk/util-dynamodb": "^3.382.0"
   },
   "devDependencies": {
-    "@middy/core": "^3.6.2",
+    "@middy/core": "^4.7.0",
     "@types/aws-lambda": "^8.10.90",
     "@types/jest": "^29.2.4",
     "@types/node": "^18.16.18",

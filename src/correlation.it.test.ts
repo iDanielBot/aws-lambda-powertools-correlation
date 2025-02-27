@@ -1,4 +1,3 @@
-
 import middy from '@middy/core';
 import { APIGatewayProxyEventV2, Context, APIGatewayProxyStructuredResultV2 } from 'aws-lambda';
 import { Logger as PowertoolsLogger } from '@aws-lambda-powertools/logger';
