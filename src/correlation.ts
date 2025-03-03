@@ -84,3 +84,17 @@ const increaseChainLength = (correlationIds: CorrelationIds): CorrelationIds => 
     'call-chain-length': (Number.parseInt(chainLength) + 1).toString(),
   };
 };
+
+export const stopInfiniteLoop = (threshold: number = 10) => {
+  return {
+    before: async (handler: middy.Request) => {
+      const len = Number.parseInt(useCorrelationIds()['call-chain-length'] || '1');
+      if (len >= threshold) {
+        const awsRequestId = handler.context.awsRequestId;
+        const invocationEvent = JSON.stringify(handler.event);
+        console.error('Possible infinite recursion detected, invocation is stopped.', { awsRequestId, invocationEvent, ...useCorrelationIds() });
+        throw new Error(`'call-chain-length' reached threshold of ${threshold}, possible infinite recursion`);
+      }
+    },
+  };
+};
